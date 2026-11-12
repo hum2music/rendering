@@ -55,6 +55,25 @@ const TIMBRE_PROFILES: Record<Timbre, TimbreProfile> = {
     // Bowed, not plucked: sustained like melody/bass rather than decaying like piano/guitar.
     decayRatePerSec: 0,
   },
+  viola: {
+    // Darker than the violin: weaker, fewer upper partials.
+    partials: [
+      { multiplier: 1, amplitude: 1 },
+      { multiplier: 2, amplitude: 0.5 },
+      { multiplier: 3, amplitude: 0.3 },
+      { multiplier: 4, amplitude: 0.15 },
+    ],
+    decayRatePerSec: 0,
+  },
+  cello: {
+    // Darker still: only a couple of partials beyond the fundamental.
+    partials: [
+      { multiplier: 1, amplitude: 1 },
+      { multiplier: 2, amplitude: 0.45 },
+      { multiplier: 3, amplitude: 0.2 },
+    ],
+    decayRatePerSec: 0,
+  },
 };
 
 /**
