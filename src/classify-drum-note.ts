@@ -1,4 +1,4 @@
-import type { DrumType } from "./types";
+import type { DrumType } from "./types.ts";
 
 /** General MIDI percussion note numbers our drum arranger emits (PRD §10.2). */
 const DRUM_TYPE_BY_PITCH: Record<number, DrumType> = {

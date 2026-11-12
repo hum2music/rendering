@@ -1,5 +1,5 @@
 import { createSeededRandom } from "@hum2music/expression";
-import type { DrumRenderNote, DrumType, PitchedRenderNote, Timbre } from "./types";
+import type { DrumRenderNote, DrumType, PitchedRenderNote, Timbre } from "./types.ts";
 
 export interface RenderOptions {
   sampleRate?: number;

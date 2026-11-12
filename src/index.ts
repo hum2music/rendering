@@ -1,3 +1,3 @@
-export * from "./types";
-export * from "./classify-drum-note";
-export * from "./synth";
+export * from "./types.ts";
+export * from "./classify-drum-note.ts";
+export * from "./synth.ts";
