@@ -1,5 +1,5 @@
 export type DrumType = "kick" | "snare" | "hihat";
-export type Timbre = "melody" | "piano" | "bass" | "guitar";
+export type Timbre = "melody" | "piano" | "bass" | "guitar" | "violin";
 
 export interface PitchedRenderNote {
   startMs: number;

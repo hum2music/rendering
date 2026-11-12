@@ -44,6 +44,17 @@ const TIMBRE_PROFILES: Record<Timbre, TimbreProfile> = {
     partials: [{ multiplier: 1, amplitude: 1 }, { multiplier: 2, amplitude: 0.4 }, { multiplier: 3, amplitude: 0.2 }],
     decayRatePerSec: 3,
   },
+  violin: {
+    partials: [
+      { multiplier: 1, amplitude: 1 },
+      { multiplier: 2, amplitude: 0.6 },
+      { multiplier: 3, amplitude: 0.45 },
+      { multiplier: 4, amplitude: 0.3 },
+      { multiplier: 5, amplitude: 0.15 },
+    ],
+    // Bowed, not plucked: sustained like melody/bass rather than decaying like piano/guitar.
+    decayRatePerSec: 0,
+  },
 };
 
 /**
