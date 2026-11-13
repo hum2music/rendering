@@ -1,0 +1,35 @@
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  id-token: write # required for npm's OIDC trusted publishing
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Publish if not already published
+        run: |
+          name=$(node -p "require('./package.json').name")
+          local_version=$(node -p "require('./package.json').version")
+          published_version=$(npm view "$name" version --registry https://registry.npmjs.org 2>/dev/null || true)
+
+          if [ "$local_version" = "$published_version" ]; then
+            echo "$name@$local_version is already published, skipping."
+            exit 0
+          fi
+
+          echo "Publishing $name@$local_version (currently published: ${published_version:-none})"
+          npm publish --access public
