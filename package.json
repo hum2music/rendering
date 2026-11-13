@@ -15,6 +15,6 @@
     "src"
   ],
   "dependencies": {
-    "@hum2music/expression": "workspace:*"
+    "@hum2music/expression": "^0.2.0"
   }
 }
